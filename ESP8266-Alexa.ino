@@ -125,6 +125,7 @@ void callback(uint8_t device_id, const char * device_name, bool state) {
 
 void loop() {
   fauxmo.handle();
+  //Use code below for Pulse Signals, otherwise erase
   delay(500);
   digitalWrite(RELAY_PIN1, LOW);
   digitalWrite(RELAY_PIN2, LOW);
