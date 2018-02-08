@@ -91,7 +91,7 @@ void callback(uint8_t device_id, const char * device_name, bool state) {
     if (state) {
       digitalWrite(RELAY_PIN1, HIGH);
     } else {
-      digitalWrite(RELAY_PIN1, LOW);
+      digitalWrite(RELAY_PIN1, HIGH);
     }
   }
   
