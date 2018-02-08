@@ -7,7 +7,7 @@
 // -----------------------------------------------------------------------------
 
 #define WIFI_SSID "linksys"
-#define WIFI_PASS ""
+#define WIFI_PASS "password"
 
 #define SERIAL_BAUDRATE                 115200
 
