@@ -7,14 +7,14 @@
 // -----------------------------------------------------------------------------
 
 #define WIFI_SSID "linksys"
-#define WIFI_PASS "password"
+#define WIFI_PASS ""
 
 #define SERIAL_BAUDRATE                 115200
 
 fauxmoESP fauxmo;
 
 // -----------------------------------------------------------------------------
-// Wifi (Do not Edit)
+// Wifi
 // -----------------------------------------------------------------------------
 
 
@@ -74,8 +74,8 @@ void setup() {
   // Fauxmo
   fauxmo.addDevice("TV");
   fauxmo.addDevice("GregsNetflix");
-  fauxmo.addDevice("UpVolume");
-  fauxmo.addDevice("DownVolume");
+  fauxmo.addDevice("Sleep");
+  fauxmo.addDevice("Office");
   fauxmo.onMessage(callback);
 }
 
@@ -104,7 +104,7 @@ void callback(uint8_t device_id, const char * device_name, bool state) {
     }
   }
   
-  if ( (strcmp(device_name, "UpVolume") == 0) ) {
+  if ( (strcmp(device_name, "Sleep") == 0) ) {
     // adjust the relay immediately!
     if (state) {
       digitalWrite(RELAY_PIN3, HIGH);
@@ -113,7 +113,7 @@ void callback(uint8_t device_id, const char * device_name, bool state) {
     }
   }
 
-  if ( (strcmp(device_name, "DownVolume") == 0) ) {
+  if ( (strcmp(device_name, "Office") == 0) ) {
     // adjust the relay immediately!
     if (state) {
       digitalWrite(RELAY_PIN4, HIGH);
@@ -125,7 +125,6 @@ void callback(uint8_t device_id, const char * device_name, bool state) {
 
 void loop() {
   fauxmo.handle();
-  //Use code below for Pulse Signals, otherwise erase
   delay(500);
   digitalWrite(RELAY_PIN1, LOW);
   digitalWrite(RELAY_PIN2, LOW);
