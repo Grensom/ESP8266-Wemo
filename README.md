@@ -1,6 +1,6 @@
 # ESP8266-Wemo
 
-This Repository does no longer work as the FauxMoESP has updated and no longer supports the files uploaded. See ESP8266-Alexa-Emulator Repository instead.
+This Repository does no longer work as the FauxMoESP has updated and no longer supports the files uploaded. See NodeMCU-AlexaDevice Repository instead.
 
 1. Download the Following Libraries and put them into your Arduino IDE Libraries
 
